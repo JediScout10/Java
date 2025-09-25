@@ -52,15 +52,27 @@
 //         System.out.println(a);
 //     }}
      
+    // public class Control_Flow {
+    //     static int sum(int n) {
+    //         int sum=0;
+    //         for (int i=1; i<=n; i++) {
+    //             sum+=i;
+    //         }
+    //         return sum;
+    //     }
+    //     public static void main(String[] args) {
+    //         int a=sum(5);
+    //         System.out.println(a);
+    //     }}
+
     public class Control_Flow {
-        static int sum(int n) {
-            int sum=0;
-            for (int i=1; i<=n; i++) {
-                sum+=i;
+        static int factorial(int n) {
+            if (n==0){
+                return 1;
             }
-            return sum;
+            return n*factorial(n-1);
         }
         public static void main(String[] args) {
-            int a=sum(5);
+            int a=factorial(5);
             System.out.println(a);
-        }}
+        }}            
