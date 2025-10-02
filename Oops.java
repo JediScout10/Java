@@ -91,31 +91,45 @@
 //     }
 // }
 
- class ShapeCalulator{
-   private int side;
-    private int length;
-    private int breadth;
-   int Recarea;
-   int squarea;
-   double circumference;
-    double radius;
- public void setarea(int side){
-    this.side=side;
-    this.squarea=side*side;
- }
+class ShapeCalculator {
+    private int squareArea;
+    private int rectangleArea;
+    private double circleArea;
 
- public void setarea(int length, int breadth){
-    this.length= length;
-    this.breadth=breadth;
-    this.Recarea=length*breadth;
- }
+    public void setArea(int side) { 
+        this.squareArea = side * side;
+    }
 
- public void setarea(double radius){
-    this.radius=radius ;
-    this.circumference= 3.14* radius*radius;
- }
-public int getarea(){
-return squarea;
+    public void setArea(int length, int breadth) { 
+        this.rectangleArea = length * breadth;
+    }
+
+    public void setArea(double radius) { 
+        this.circleArea = 3.14 * radius * radius;
+    }
+
+    public int getSquareArea() {
+        return squareArea;
+    }
+
+    public int getRectangleArea() {
+        return rectangleArea;
+    }
+
+    public double getCircleArea() {
+        return circleArea;
+    }
 }
 
+
+ public class Oops {
+    public static void main(String[] args){
+        ShapeCalculator sc= new ShapeCalculator();
+        sc.setArea(5);
+        System.out.println("Area of square is: "+sc.getSquareArea());
+        sc.setArea(5,6);
+        System.out.println("Area of rectangle is: "+sc.getRectangleArea());
+        sc.setArea(7.5);
+        System.out.println("Area of circle is: "+sc.getCircleArea());
+    }
  }
