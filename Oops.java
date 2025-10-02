@@ -1,20 +1,50 @@
-// class Student{
-//         int age;
-//             String name;
-//                 int marks;
-//                     void display(){
-//                             System.out.print("name :"+name+" age: "+age+" marks: "+marks);
-//                                 }
+// class Student {
+//     String name;
+//     int age;
 
-//                                 }
-//                                     public class Oops {
-//                                     public static void main(String[] args){
-//                                     Student s1= new Student();
-//                                     s1.age=20;
-//                                     s1.name="Rohit";
-//                                     s1.marks=36;
-//                                     s1.display();
-//                                     }}
+//     // Constructor
+//     Student() {
+//         name = "Unknown";
+//         age = 0;
+//     }
+
+//     void display() {
+//         System.out.println("Name: " + name + ", Age: " + age);
+//     }
+// }
+
+// public class Oops {
+//     public static void main(String[] args) {
+//         Student s1 = new Student(); // constructor called automatically
+//         s1.display(); // Name: Unknown, Age: 0
+//     }
+// }
+
+// class Student {
+//     String name;
+//     int age;
+
+//     // Parameterized constructor
+//     Student(String n, int a) {
+//         name = n;
+//         age = a;
+//     }
+
+//     void display() {
+//         System.out.println("Name: " + name + ", Age: " + age);
+//     }
+// }
+
+// public class Oops {
+//     public static void main(String[] args) {
+//         Student s1 = new Student("Rohit", 20);
+//         Student s2 = new Student("Maya", 19);
+//         s1.display(); // Name: Rohit, Age: 20
+//         s2.display(); // Name: Maya, Age: 19
+//     }
+// }
+
+//  Encapsulation with Getters and Setters and Input Validation                        
 // import java.util.Scanner;
 
 // class BankAccount {
@@ -91,45 +121,152 @@
 //     }
 // }
 
-class ShapeCalculator {
-    private int squareArea;
-    private int rectangleArea;
-    private double circleArea;
+//  Encapsulation with Method Overloading
 
-    public void setArea(int side) { 
-        this.squareArea = side * side;
-    }
+// class ShapeCalculator {
+//     private int squareArea;
+//     private int rectangleArea;
+//     private double circleArea;
 
-    public void setArea(int length, int breadth) { 
-        this.rectangleArea = length * breadth;
-    }
+//     public void setArea(int side) { 
+//         this.squareArea = side * side;
+//     }
 
-    public void setArea(double radius) { 
-        this.circleArea = 3.14 * radius * radius;
-    }
+//     public void setArea(int length, int breadth) { 
+//         this.rectangleArea = length * breadth;
+//     }
 
-    public int getSquareArea() {
-        return squareArea;
-    }
+//     public void setArea(double radius) { 
+//         this.circleArea = 3.14 * radius * radius;
+//     }
 
-    public int getRectangleArea() {
-        return rectangleArea;
-    }
+//     public int getSquareArea() {
+//         return squareArea;
+//     }
 
-    public double getCircleArea() {
-        return circleArea;
+//     public int getRectangleArea() {
+//         return rectangleArea;
+//     }
+
+//     public double getCircleArea() {
+//         return circleArea;
+//     }
+// }
+
+
+//  public class Oops {
+//     public static void main(String[] args){
+//         ShapeCalculator sc= new ShapeCalculator();
+//         sc.setArea(5);
+//         System.out.println("Area of square is: "+sc.getSquareArea());
+//         sc.setArea(5,6);
+//         System.out.println("Area of rectangle is: "+sc.getRectangleArea());
+//         sc.setArea(7.5);
+//         System.out.println("Area of circle is: "+sc.());
+//     }
+//  }
+
+//  Encapsulation with Constructor Overloading
+
+// class ShapeCalculator {
+//     private int squareArea;
+//     private int rectangleArea;
+//     private double circleArea;
+
+//     // Constructor for square
+//     ShapeCalculator(int side) { 
+//         this.squareArea = side * side;
+//     }
+
+//     // Constructor for rectangle
+//     ShapeCalculator(int length, int breadth) { 
+//         this.rectangleArea = length * breadth;
+//     }
+
+//     // Constructor for circle
+//     ShapeCalculator(double radius) { 
+//         this.circleArea = 3.14 * radius * radius;
+//     }
+
+//     public int getSquareArea() {
+//         return squareArea;
+//     }
+
+//     public int getRectangleArea() {
+//         return rectangleArea;
+//     }
+
+//     public double getCircleArea() {
+//         return circleArea;
+//     }
+//    }
+
+//     public class Oops {
+//     public static void main(String[] args) {
+//         ShapeCalculator square = new ShapeCalculator(5);
+//         System.out.println("Area of Square: " + square.getSquareArea());
+
+//         ShapeCalculator rectangle = new ShapeCalculator(4, 6);
+//         System.out.println("Area of Rectangle: " + rectangle.getRectangleArea());
+
+//         ShapeCalculator circle = new ShapeCalculator(7.5);
+//         System.out.println("Area of Circle: " + circle.getCircleArea());
+//     }
+// }
+ class Person {
+private String name;
+private int age;
+
+public void setName(String name) {
+    this.name = name;
+   
+}
+
+public String getName() {
+    return name;
+}
+
+public void setAge(int age) {
+    if (age >= 0) {
+        this.age = age;
+    } else {
+        System.out.println("Age cannot be negative.");
     }
 }
 
+public int getAge() {
+    return age;
+}
 
- public class Oops {
-    public static void main(String[] args){
-        ShapeCalculator sc= new ShapeCalculator();
-        sc.setArea(5);
-        System.out.println("Area of square is: "+sc.getSquareArea());
-        sc.setArea(5,6);
-        System.out.println("Area of rectangle is: "+sc.getRectangleArea());
-        sc.setArea(7.5);
-        System.out.println("Area of circle is: "+sc.getCircleArea());
+}
+
+ class Student extends Person {
+   
+       public void displayStudent() {
+        System.out.println("Student Info: Name=" + getName() +
+                           ", Age=" + getAge());
     }
- }
+
+
+}
+class Teacher extends Person {
+      public void displayTeacher() {
+         System.out.println("Teacher Info: Name=" + getName() +
+                              ", Age=" + getAge());
+      }
+   
+}
+public class Oops {
+   public static void main(String[] args) {
+Student s=new Student();
+Teacher t=new Teacher();
+s.setName("Rohit");
+s.setAge(20);
+t.setName("DS Patil");   
+t.setAge(40);
+
+s.displayStudent();
+t.displayTeacher();
+
+}
+}
