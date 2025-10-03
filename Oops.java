@@ -122,7 +122,6 @@
 // }
 
 //  Encapsulation with Method Overloading
-
 // class ShapeCalculator {
 //     private int squareArea;
 //     private int rectangleArea;
@@ -153,7 +152,6 @@
 //     }
 // }
 
-
 //  public class Oops {
 //     public static void main(String[] args){
 //         ShapeCalculator sc= new ShapeCalculator();
@@ -167,7 +165,6 @@
 //  }
 
 //  Encapsulation with Constructor Overloading
-
 // class ShapeCalculator {
 //     private int squareArea;
 //     private int rectangleArea;
@@ -213,60 +210,173 @@
 //         System.out.println("Area of Circle: " + circle.getCircleArea());
 //     }
 // }
- class Person {
-private String name;
-private int age;
 
-public void setName(String name) {
-    this.name = name;
-   
-}
+// Inheritance with Method Overriding and Method Overloading
+// import java.util.Scanner;
 
-public String getName() {
-    return name;
-}
+// class Shape {
+//     // common contract: every shape can compute area
+//     double area() {
+//         System.out.println("Area not defined for base Shape.");
+//         return 0.0;
+//     }
+// }
 
-public void setAge(int age) {
-    if (age >= 0) {
-        this.age = age;
-    } else {
-        System.out.println("Age cannot be negative.");
+// class Square extends Shape {
+//     private int side;
+
+//     Square(int side){ 
+//         this.side = side; 
+//     }
+
+//     @Override
+//     double area() {
+//         return (double) side * side;
+//     }
+// }
+
+// class Rectangle extends Shape {
+//     private int length, breadth;
+
+//     Rectangle(int length, int breadth) {
+//         this.length = length;
+//         this.breadth = breadth;
+//     }
+
+//     @Override
+//     double area() {
+//         return (double) length * breadth;
+//     }
+// }
+
+// class Circle extends Shape {
+//     private double radius;
+
+//     Circle(double radius) { this.radius = radius; }
+
+//     @Override
+//     double area() {
+//         return 3.14 * radius * radius;
+//     }
+// }
+
+// // Separate utility class demonstrating method overloading
+// class Calculator {
+//     int add(int a, int b) {
+//         return a + b;
+//     }
+//     int add(int a, int b, int c) {
+//         return a + b + c;
+//     }
+//     double add(double a, double b) {
+//         return a + b;
+//     }
+// }
+
+// public class Oops {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+
+//         System.out.print("Enter side of square: ");
+//         int side = sc.nextInt();
+//         Shape s = new Square(side);            // Shape reference -> Square object
+//         System.out.println("Area of square is: " + s.area());
+
+//         System.out.print("Enter length and breadth of rectangle: ");
+//         int length = sc.nextInt();
+//         int breadth = sc.nextInt();
+//         s = new Rectangle(length, breadth);   // reuse reference variable
+//         System.out.println("Area of rectangle is: " + s.area());
+
+//         System.out.print("Enter radius of circle: ");
+//         double radius = sc.nextDouble();
+//         s = new Circle(radius);
+//         System.out.println("Area of circle is: " + s.area());
+
+//         // Demonstrate method overloading (compile-time polymorphism)
+//         Calculator calc = new Calculator();
+//         System.out.println("add(6,6,6) = " + calc.add(6, 6, 6));
+//         System.out.println("add(6,6)   = " + calc.add(6, 6));
+//         System.out.println("add(6.5,2.3) = " + calc.add(6.5, 2.3));
+
+//         sc.close();
+//     }
+// }
+
+abstract class Animal {
+    abstract void sound(); 
+    void sleep(){
+        System.out.println("Animal is sleeping");
     }
 }
 
-public int getAge() {
-    return age;
+ interface Flyable {
+    void fly(); 
 }
 
+ interface Swimmable {
+    void swim();  
 }
 
- class Student extends Person {
-   
-       public void displayStudent() {
-        System.out.println("Student Info: Name=" + getName() +
-                           ", Age=" + getAge());
+class Duck extends Animal implements Flyable, Swimmable {
+    @Override
+    void sound() {
+        System.out.println("Duck says: Quack Quack");
     }
 
+    @Override
+    public void fly() {
+        System.out.println("Duck is flying");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Duck is swimming");
+    }
+}
+
+class Dog extends Animal implements Swimmable {
+    @Override
+    void sound() {
+        System.out.println("Dog says: Woof Woof");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Dog is swimming");
+    }
 
 }
-class Teacher extends Person {
-      public void displayTeacher() {
-         System.out.println("Teacher Info: Name=" + getName() +
-                              ", Age=" + getAge());
-      }
-   
+
+class Eagle extends Animal implements Flyable {
+    @Override
+    void sound() {
+        System.out.println("Eagle says: Screech");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("Eagle is flying");
+    }
 }
+
 public class Oops {
-   public static void main(String[] args) {
-Student s=new Student();
-Teacher t=new Teacher();
-s.setName("Rohit");
-s.setAge(20);
-t.setName("DS Patil");   
-t.setAge(40);
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.sound(); 
+        myDog.sleep();
+        myDog.swim();
 
-s.displayStudent();
-t.displayTeacher();
+        Animal myDuck = new Duck();
+        myDuck.sound();
+        myDuck.sleep();
+        myDuck.fly();
+        myDuck.swim();
 
-}
+        Animal myEagle = new Eagle();
+        myEagle.sound();    
+        myEagle.sleep();
+        myEagle.fly();
+
+    }
 }
