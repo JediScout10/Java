@@ -303,80 +303,171 @@
 //     }
 // }
 
-abstract class Animal {
-    abstract void sound(); 
-    void sleep(){
-        System.out.println("Animal is sleeping");
+//  Inheritance with Abstract Classes and Interfaces
+// abstract class Animal {
+//     abstract void sound(); 
+//     void sleep(){
+//         System.out.println("Animal is sleeping");
+//     }
+// }
+
+//  interface Flyable {
+//     void fly(); 
+// }
+
+//  interface Swimmable {
+//     void swim();  
+// }
+
+// class Duck extends Animal implements Flyable, Swimmable {
+//     @Override
+//     void sound() {
+//         System.out.println("Duck says: Quack Quack");
+//     }
+
+//     @Override
+//     public void fly() {
+//         System.out.println("Duck is flying");
+//     }
+
+//     @Override
+//     public void swim() {
+//         System.out.println("Duck is swimming");
+//     }
+// }
+
+// class Dog extends Animal implements Swimmable {
+//     @Override
+//     void sound() {
+//         System.out.println("Dog says: Woof Woof");
+//     }
+
+//     @Override
+//     public void swim() {
+//         System.out.println("Dog is swimming");
+//     }
+
+// }
+
+// class Eagle extends Animal implements Flyable {
+//     @Override
+//     void sound() {
+//         System.out.println("Eagle says: Screech");
+//     }
+
+//     @Override
+//     public void fly() {
+//         System.out.println("Eagle is flying");
+//     }
+// }
+
+// public class Oops {
+//     public static void main(String[] args) {
+//         Dog myDog = new Dog();
+//         myDog.sound(); 
+//         myDog.sleep();
+//         myDog.swim();
+
+//         Duck myDuck = new Duck();
+//         myDuck.sound();
+//         myDuck.sleep();
+//         myDuck.fly();
+//         myDuck.swim();
+
+//         Eagle myEagle = new Eagle();
+//         myEagle.sound();    
+//         myEagle.sleep();
+//         myEagle.fly();
+
+//     }
+// }
+
+abstract class LibraryItem{
+    private String title;
+    private String author;
+    private String isbn;
+
+abstract void disaplayInfo(){
     }
+    
+void setTitle(String title){
+        this.title=title;
+    }
+
+    String getTitle(){
+        return title;
+    }
+
+    void setAuthor(String author){
+        this.author=author;
+    }
+
+    String getAuthor(){
+        return author;
+    }
+
+    void setIsbn(String isbn){
+        this.isbn=isbn;
+    }
+
+    String getIsbn(){
+        return isbn;
+    }
+
 }
 
- interface Flyable {
-    void fly(); 
+interface Borrowable{
+    void borrowItem();
+    
 }
 
- interface Swimmable {
-    void swim();  
-}
-
-class Duck extends Animal implements Flyable, Swimmable {
+class Book extends LibraryItem implements Borrowable{
     @Override
-    void sound() {
-        System.out.println("Duck says: Quack Quack");
+    void disaplayInfo(){
+        System.out.println("Book Title: "+getTitle());
+        System.out.println("Book Author: "+getAuthor());
+        System.out.println("Book ISBN: "+getIsbn());
     }
-
     @Override
-    public void fly() {
-        System.out.println("Duck is flying");
-    }
-
-    @Override
-    public void swim() {
-        System.out.println("Duck is swimming");
+    public void borrowItem(){
+        System.out.println("You have borrowed the book: "+getTitle());
     }
 }
-
-class Dog extends Animal implements Swimmable {
+class Magazine extends LibraryItem implements Borrowable{
     @Override
-    void sound() {
-        System.out.println("Dog says: Woof Woof");
+    void disaplayInfo(){
+        System.out.println("Magazine Title: "+getTitle());
+        System.out.println("Magazine Author: "+getAuthor());
+        System.out.println("Magazine ISBN: "+getIsbn());
     }
 
     @Override
-    public void swim() {
-        System.out.println("Dog is swimming");
-    }
-
-}
-
-class Eagle extends Animal implements Flyable {
-    @Override
-    void sound() {
-        System.out.println("Eagle says: Screech");
-    }
-
-    @Override
-    public void fly() {
-        System.out.println("Eagle is flying");
+    public void borrowItem(){
+        System.out.println("You have borrowed the magazine: "+getTitle());
     }
 }
-
 public class Oops {
-    public static void main(String[] args) {
-        Animal myDog = new Dog();
-        myDog.sound(); 
-        myDog.sleep();
-        myDog.swim();
+    public static void main(String[] args){
+      String[] books={"Boots Belts Berets","Mahabharata Unravelled","Balidan","The wings of fire","The Alchemist"};
+      String[] authors={"Tanushree podar","Ami Ganatra","Swapnil Pandey","A.P.J Abdul Kalam" , "Paulo Coelho"};
+        String[] isbns={"9780743273565","9780451524935","9780141439600","9780140449136","9780061122415"};
 
-        Animal myDuck = new Duck();
-        myDuck.sound();
-        myDuck.sleep();
-        myDuck.fly();
-        myDuck.swim();
+LibraryItem[] library = new LibraryItem[books.length];
 
-        Animal myEagle = new Eagle();
-        myEagle.sound();    
-        myEagle.sleep();
-        myEagle.fly();
+        for (int i = 0; i < books.length; i++) {
+            Book b = new Book();
+            b.setTitle(books[i]);
+            b.setAuthor(authors[i]);
+            b.setIsbn(isbns[i]);
+            library[i] = b;
+        }
 
+    for (int i = 0; i < library.length; i++) {
+    library[i].displayInfo();
+    ((Borrowable) library[i]).borrowItem(); // call interface method
+    System.out.println();
+}
+
+       
     }
 }
