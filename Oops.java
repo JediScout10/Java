@@ -3,9 +3,9 @@
 //     int age;
 
 //     // Constructor
-//     Student() {
-//         name = "Unknown";
-//         age = 0;
+//     Student(String name, int age) {
+//         this.name = name;
+//         this.age = age;
 //     }
 
 //     void display() {
@@ -13,10 +13,10 @@
 //     }
 // }
 
-// public class Oops {
+//  public class Oops {
 //     public static void main(String[] args) {
-//         Student s1 = new Student(); // constructor called automatically
-//         s1.display(); // Name: Unknown, Age: 0
+//         Student s1 = new Student("Rohit", 20); // constructor called automatically
+//         s1.display(); 
 //     }
 // }
 
@@ -103,7 +103,7 @@
 // public class Oops {
 //     public static void main(String[] args){
 //         Scanner sc = new Scanner(System.in);
-//         BankAccount account1= new BankAccount(123456, "John Doe", 500.0);
+//         BankAccount account1= new BankAccount(123456, "Sir Rohit", 50000000.0);
 
 //         account1.display();
 
@@ -382,92 +382,91 @@
 //     }
 // }
 
-abstract class LibraryItem{
-    private String title;
-    private String author;
-    private String isbn;
+// abstract class LibraryItem{
+//     private String title;
+//     private String author;
+//     private String isbn;
 
-abstract void disaplayInfo(){
-    }
+// abstract void displayInfo();
     
-void setTitle(String title){
-        this.title=title;
-    }
+// void setTitle(String title){
+//         this.title=title;
+//     }
 
-    String getTitle(){
-        return title;
-    }
+//     String getTitle(){
+//         return title;
+//     }
 
-    void setAuthor(String author){
-        this.author=author;
-    }
+//     void setAuthor(String author){
+//         this.author=author;
+//     }
 
-    String getAuthor(){
-        return author;
-    }
+//     String getAuthor(){
+//         return author;
+//     }
 
-    void setIsbn(String isbn){
-        this.isbn=isbn;
-    }
+//     void setIsbn(String isbn){
+//         this.isbn=isbn;
+//     }
 
-    String getIsbn(){
-        return isbn;
-    }
+//     String getIsbn(){
+//         return isbn;
+//     }
 
-}
+// }
 
-interface Borrowable{
-    void borrowItem();
+// interface Borrowable{
+//     void borrowItem();
     
-}
+// }
 
-class Book extends LibraryItem implements Borrowable{
-    @Override
-    void disaplayInfo(){
-        System.out.println("Book Title: "+getTitle());
-        System.out.println("Book Author: "+getAuthor());
-        System.out.println("Book ISBN: "+getIsbn());
-    }
-    @Override
-    public void borrowItem(){
-        System.out.println("You have borrowed the book: "+getTitle());
-    }
-}
-class Magazine extends LibraryItem implements Borrowable{
-    @Override
-    void disaplayInfo(){
-        System.out.println("Magazine Title: "+getTitle());
-        System.out.println("Magazine Author: "+getAuthor());
-        System.out.println("Magazine ISBN: "+getIsbn());
-    }
+// class Book extends LibraryItem implements Borrowable{
+//     @Override
+//     void displayInfo(){
+//         System.out.println("Book Title: "+getTitle());
+//         System.out.println("Book Author: "+getAuthor());
+//         System.out.println("Book ISBN: "+getIsbn());
+//     }
+//     @Override
+//     public void borrowItem(){
+//         System.out.println("You have borrowed the book: "+getTitle());
+//     }
+// }
+// class Magazine extends LibraryItem implements Borrowable{
+//     @Override
+//     void displayInfo(){
+//         System.out.println("Magazine Title: "+getTitle());
+//         System.out.println("Magazine Author: "+getAuthor());
+//         System.out.println("Magazine ISBN: "+getIsbn());
+//     }
 
-    @Override
-    public void borrowItem(){
-        System.out.println("You have borrowed the magazine: "+getTitle());
-    }
-}
-public class Oops {
-    public static void main(String[] args){
-      String[] books={"Boots Belts Berets","Mahabharata Unravelled","Balidan","The wings of fire","The Alchemist"};
-      String[] authors={"Tanushree podar","Ami Ganatra","Swapnil Pandey","A.P.J Abdul Kalam" , "Paulo Coelho"};
-        String[] isbns={"9780743273565","9780451524935","9780141439600","9780140449136","9780061122415"};
+//     @Override
+//     public void borrowItem(){
+//         System.out.println("You have borrowed the magazine: "+getTitle());
+//     }
+// }
+// public class Oops {
+//     public static void main(String[] args){
+//       String[] books={"Boots Belts Berets","Mahabharata Unravelled","Balidan","The wings of fire","The Alchemist"};
+//       String[] authors={"Tanushree podar","Ami Ganatra","Swapnil Pandey","A.P.J Abdul Kalam" , "Paulo Coelho"};
+//         String[] isbns={"9780743273565","9780451524935","9780141439600","9780140449136","9780061122415"};
 
-LibraryItem[] library = new LibraryItem[books.length];
+// LibraryItem[] library = new LibraryItem[books.length];
 
-        for (int i = 0; i < books.length; i++) {
-            Book b = new Book();
-            b.setTitle(books[i]);
-            b.setAuthor(authors[i]);
-            b.setIsbn(isbns[i]);
-            library[i] = b;
-        }
+//         for (int i = 0; i < books.length; i++) {
+//             Book b = new Book();
+//             b.setTitle(books[i]);
+//             b.setAuthor(authors[i]);
+//             b.setIsbn(isbns[i]);
+//             library[i] = b;
+//         }
 
-    for (int i = 0; i < library.length; i++) {
-    library[i].displayInfo();
-    ((Borrowable) library[i]).borrowItem(); // call interface method
-    System.out.println();
-}
+//     for (int i = 0; i < library.length; i++) {
+//     library[i].displayInfo();
+//     ((Borrowable) library[i]).borrowItem(); // call interface method
+//     System.out.println();
+// }
 
        
-    }
-}
+//     }
+// }
