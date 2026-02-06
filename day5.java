@@ -1,5 +1,5 @@
 //Task 1: Frequency counting using HashMap
-import java.util.*;
+// import java.util.*;
 // public class day5 {
 //     static void Frequencycounting(int [] arr){
 //         HashMap<Integer,Integer> map=new HashMap<>();
