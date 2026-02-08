@@ -1,7 +1,9 @@
 
 // import java.util.*;
 
-//task1
+//task1— Two Pointer Pair Sum
+// Given sorted array and target X, check if a pair exists.
+
 // public class day3{
 //     static boolean pairsum(int [] arr,int x){
 //         int L=0;
@@ -40,7 +42,9 @@
 //     }
 // }
 
-//task2
+//task2— Reverse Array Using Two Pointers
+// (No extra array allowed)
+
 // public class day3{
 //     static void reversearray(int[] arr){
 // int L=0;
@@ -74,7 +78,8 @@
 //     }
 
 
-//task3
+//task3— Max Sum Subarray of Size K
+// Classic sliding window problem.
 
 // public class day3{
 //     static int maxsum(int[] arr, int k){
@@ -147,3 +152,4 @@
 //        sc.close();
 //     }
 //     }
+

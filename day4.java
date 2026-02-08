@@ -1,4 +1,8 @@
 // import java.util.*;
+
+// Task 1 — Check duplicates
+// Return true if array has duplicates.
+
 // public class day4 {
 //     static boolean Duplicate(int[] arr){
 //         HashSet<Integer> set=new HashSet<>();
@@ -27,6 +31,8 @@
 //     }
 // }
 
+// task4-Pair sum using HashSet
+// (Array may be unsorted)
 
 // public class day4{
 // static boolean PairSum(int []arr ,int x){
