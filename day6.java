@@ -1,36 +1,37 @@
-import java.util.*;
+// import java.util.*;
 //task1-Find the length of the longest substring without repeating characters
 
-public class day6 {
-    static int a1(String s){
-        HashSet<Character> set=new HashSet<>();
-        int L=0;
-        int R=0;
-        int max=0;
-           while(R<s.length()){
-            char c=s.charAt(R);
-            if(!set.contains(c)){
-                set.add(c);
-                max=Math.max(max,R-L+1);
-                R++;
+// public class day6 {
+//     static int a1(String s){
+//         HashSet<Character> set=new HashSet<>();
+//         int L=0;
+//         int R=0;
+//         int max=0;
+//            while(R<s.length()){
+//             char c=s.charAt(R);
+//             if(!set.contains(c)){
+//                 set.add(c);
+//                 max=Math.max(max,R-L+1);
+//                 R++;
                 
-            } else {
-                set.remove(s.charAt(L));
-                L++;
-            }
-           }
-           return max;
-        }
+//             } else {
+//                 set.remove(s.charAt(L));
+//                 L++;
+//             }
+//            }
+//            return max;
+//         }
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter the string:");
-        String s = sc.nextLine();
-        int result=a1(s);
-        System.out.println("length of longest substring without repeating characters: " + result);
-    sc.close();}
-}
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("enter the string:");
+//         String s = sc.nextLine();
+//         int result=a1(s);
+//         System.out.println("length of longest substring without repeating characters: " + result);
+//     sc.close();}
+// }
 
+//task2-Find the length of the longest substring with at most k distinct characters
 // public class day6{
 //     static int a2(String s, int k){
 // HashMap<Character,Integer>map=new HashMap<>();
@@ -64,3 +65,4 @@ public class day6 {
 // sc.close();
 // }
 // }
+
