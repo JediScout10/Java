@@ -1,42 +1,40 @@
 import java.util.*;
-
 public class day8{
-    static int maxSum(int[] arr, int k){
-int L=0;
-int R=0;
-int max=0;
-int windowsum=0;
-HashSet<Integer> set=new HashSet<>();
-while(R<arr.length){
-if(!set.contains(R)){
-set.add(R);
-while(R>k){
-windowsum+=arr[R];
+    //task1:Maximum sum of subarray of size k
+    static int maxsum(int [] arr,int k){
+        int sum=0;
+        for(int i=0;i<k;i++){
+            sum+=arr[i];
+        }
+        int maxsum=sum;
+        for(int i=k;i<arr.length;i++){
+            sum+=arr[i]-arr[i-k];
+            maxsum=Math.max(maxsum,sum);
+        }
+        return maxsum;
+    }
+//task2
+    static int maxstring(String s){
+        HashMap<Character,Integer> map=new HashMap<>();
+        int L=0;
+        int R=0;
+        int longest=0;
+        while(R<s.length()){
+char c=s.charAt(R);
+map.put(c,map.getOrDefault(c,0)+1);
 R++;
-max=windowsum;
-for(int i=k;i<arr.length;i++){
-max=max - arr[i-k] + arr[i];
+while(map.get(c)>1){
+    char leftchar=s.charAt(L);
+    map.put(leftchar,map.getOrDefault(leftchar,0)-1);
+    if(map.get(leftchar)==0){
+        map.remove(leftchar);
+    }
+    L++;
 }
+longest=Math.max(longest,R-L);
+        }
+  return longest;
 }
-}
-max=Math.max(max,windowsum);
-}
-return max;
-}
-public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    System.out.println("enter size of array:");
-    int n = sc.nextInt();
-    System.out.println("enter the elements of array:");
-    int arr[]=new int[n];   
-for(int i=0;i<n;i++){
-    arr[i]=sc.nextInt();
-}
-System.out.println("enter the size of subarray k:");
-int k=sc.nextInt();
-    int result=maxSum(arr,k);
-    System.out.println("maximum sum of subarray of size k: " + result);
 
-sc.close();
-}
-}
+
+    }
