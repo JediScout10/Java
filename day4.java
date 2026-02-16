@@ -1,4 +1,4 @@
-// import java.util.*;
+import java.util.*;
 
 // Task 1 — Check duplicates
 // Return true if array has duplicates.
