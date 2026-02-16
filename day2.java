@@ -29,35 +29,35 @@
 import java.util.Scanner;
 
 public class day2 {
-    //task1
-    static int findIndex(int[] arr, int target) {
-        for(int i=0;i <arr.length;i++){
-            if(arr[i]==target){return i;}
-        }
-        return -1;
-    }
+    // //task1
+    // static int findIndex(int[] arr, int target) {
+    //     for(int i=0;i <arr.length;i++){
+    //         if(arr[i]==target){return i;}
+    //     }
+    //     return -1;
+    // }
 
-    //task2
-     static int countOccurrences(int[] arr, int target) {
-        int count = 0;
+    // //task2
+    //  static int countOccurrences(int[] arr, int target) {
+    //     int count = 0;
         
-        for (int i=0; i < arr.length; i++) {
-            if (arr[i] == target) {
-                count++;
-            }
-        }
-        return count;
-    }
+    //     for (int i=0; i < arr.length; i++) {
+    //         if (arr[i] == target) {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
 
-    //task3
-    static int[] prefixsum(int[] arr){
-        int[] prefix=new int[arr.length];
-        prefix[0]=arr[0];
-        for(int i=1;i<arr.length;i++){
-            prefix[i]=prefix[i-1]+arr[i];
-        }
-        return prefix;
-    }
+    // //task3
+    // static int[] prefixsum(int[] arr){
+    //     int[] prefix=new int[arr.length];
+    //     prefix[0]=arr[0];
+    //     for(int i=1;i<arr.length;i++){
+    //         prefix[i]=prefix[i-1]+arr[i];
+    //     }
+    //     return prefix;
+    // }
 
    // task4 
          static int[] prefixsum1(int[] arr){
@@ -101,46 +101,46 @@ public class day2 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         //task1
-           System.out.println("enter size of element you want to insert:");
-        int n =sc.nextInt();
-        int [] arr=new int[n];
-        for(int i=0; i<n; i++){
-            System.out.print("enter"+i+":");
-            arr[i]=sc.nextInt();
-        }
+//            System.out.println("enter size of element you want to insert:");
+//         int n =sc.nextInt();
+//         int [] arr=new int[n];
+//         for(int i=0; i<n; i++){
+//             System.out.print("enter"+i+":");
+//             arr[i]=sc.nextInt();
+//         }
 
-        System.out.println("Number you want to search index of:");
-        int a=sc.nextInt();
+//         System.out.println("Number you want to search index of:");
+//         int a=sc.nextInt();
      
-        int index=findIndex(arr,a);
-        System.out.println("Index of "+a+" is "+index);
+//         int index=findIndex(arr,a);
+//         System.out.println("Index of "+a+" is "+index);
 
-        //task2 
-        System.out.println("enter size of element you want to insert for occurrence count:");
-        int n1 =sc.nextInt();
-         int [] arr1=new int[n1];
-        for(int i=0; i<n1; i++){
-            System.out.println("enter"+i+":");
-            arr1[i]=sc.nextInt();
-        }
-        System.out.println("Number you want to count occurrences of:");
-        int a1 =sc.nextInt();
+//         //task2 
+//         System.out.println("enter size of element you want to insert for occurrence count:");
+//         int n1 =sc.nextInt();
+//          int [] arr1=new int[n1];
+//         for(int i=0; i<n1; i++){
+//             System.out.println("enter"+i+":");
+//             arr1[i]=sc.nextInt();
+//         }
+//         System.out.println("Number you want to count occurrences of:");
+//         int a1 =sc.nextInt();
       
-        int occ=countOccurrences(arr1,a1);
-        System.out.println("Occurrences of "+a1+" is "+occ);
+//         int occ=countOccurrences(arr1,a1);
+//         System.out.println("Occurrences of "+a1+" is "+occ);
 
-        //task3
-        System.out.println("enter size of element you want to insert for prefix sum:");
-        int n2=sc.nextInt();
-        int [] arr2=new int[n2];
-        for(int i=0; i<n2; i++){
-            System.out.println("enter"+i+":");
-            arr2[i]=sc.nextInt();
-        }
-System.out.println("enter index you want to get prefix sum upto:");
-int a3=sc.nextInt();
-        int[] prefix=prefixsum(arr2);
-        System.out.println("Prefix sum upto index "+a3+" is "+prefix[a3]);
+//         //task3
+//         System.out.println("enter size of element you want to insert for prefix sum:");
+//         int n2=sc.nextInt();
+//         int [] arr2=new int[n2];
+//         for(int i=0; i<n2; i++){
+//             System.out.println("enter"+i+":");
+//             arr2[i]=sc.nextInt();
+//         }
+// System.out.println("enter index you want to get prefix sum upto:");
+// int a3=sc.nextInt();
+//         int[] prefix=prefixsum(arr2);
+//         System.out.println("Prefix sum upto index "+a3+" is "+prefix[a3]);
 
 
         //task4
