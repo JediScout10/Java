@@ -56,7 +56,7 @@ return MaxSum;
             //TASK2
     System.out.println("enter the size of the array:");
     int n1 = sc.nextInt();   
-    int [] arr1=new int[n];
+    int [] arr1=new int[n1];
     System.out.println("enter the elements of the array:");
     for(int i=0;i<n1;i++){
         arr1[i]=sc.nextInt();

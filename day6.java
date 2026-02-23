@@ -66,3 +66,35 @@
 // }
 // }
 
+import java.util.HashMap;
+
+public class day6{
+    //TASK1:
+    static int sub(String s){
+        HashMap<Character,Integer> map=new HashMap<>();
+        int L=0;
+        int R=0;
+        int max=Integer.MIN_VALUE;
+        while(R<s.length()){
+            char c=s.charAt(R);
+            map.put(c,map.getOrDefault(c,0)+1);
+            R++;
+            while(map.get(c)>1){
+                char leftChar=s.charAt(L);
+                map.put(leftChar,map.get(leftChar)-1);
+                if(map.get(leftChar)==0){
+                    map.remove(leftChar);
+                }
+                L++;
+            }
+            max=Math.max(max,R-L);
+    
+}
+return max;
+    }
+    public static void main(String[] args){
+        String s="abcabcdbb";
+        int result=sub(s);
+        System.out.println("length of longest substring without repeating characters: " + result);
+    }
+}
