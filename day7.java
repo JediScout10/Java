@@ -1,6 +1,6 @@
 import java.util.*;
 
-//task1:Count of Substrings with Exactly K Distinct Characters
+//task1:Count of Substrings with at most K Distinct Characters
 public class day7 {
     static int a(String s, int k){
         HashMap<Character,Integer>map=new HashMap<>();

@@ -69,7 +69,7 @@
 import java.util.HashMap;
 
 public class day6{
-    //TASK1:
+    //TASK1:Find the length of the longest substring without repeating characters (using HashMap)
     static int sub(String s){
         HashMap<Character,Integer> map=new HashMap<>();
         int L=0;
