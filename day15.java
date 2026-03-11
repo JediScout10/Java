@@ -1,16 +1,25 @@
 import java.util.*;
 public class day15 {
- static int maxArea(int[] height) {
- int maxarea=Integer.MIN_VALUE;
- int max1=height[0];
- for (int i=1;i<height.length;i++){
-    if (height[i]>max1){
-        max1=height[i];
+    //task1:
+ static int maxArea(int[] arr) {
+    int right=arr.length-1;
+    int left=0;
+    int maxarea=Integer.MIN_VALUE;
+    while(left<right){
+        int height=Math.min(arr[left],arr[right]);
+        int width=right-left;
+        int area=width*height;
+         maxarea=Math.max(maxarea,area);
+         if (arr[left]<arr[right]){
+            left++;}
+            else{
+                right--;
+            }
+         }
+    
+        return maxarea;
     }
-    maxarea=Math.max(maxarea,(height[i]*max1));
- }
- return maxarea;    
-}
+
 public static void main(String[] args) {
     Scanner sc=new Scanner(System.in);
     System.out.println("enter the size of array");
